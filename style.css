@@ -250,12 +250,6 @@ h2::after {
         background-attachment: scroll;
     }
 }
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-    }
-
     .menu-toggle {
         display: block;
     }
@@ -267,7 +261,7 @@ h2::after {
     .hero-text h1 {
         font-size: 2.2rem;
     }
-}
+
 
 /* =========================================================
     PARTNER SECTION
@@ -420,9 +414,7 @@ h2::after {
     background: var(--accent);
 }
 
-/* =========================================================
-    FOOTER
-========================================================= */
+/*FOOTER */
 footer {
     background: var(--primary);
     color: rgba(255,255,255,0.8);
@@ -430,9 +422,7 @@ footer {
     text-align: center;
 }
 
-/* =========================================================
-    ANIMATIONS
-========================================================= */
+/* ANIMATIONS*/
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -444,9 +434,7 @@ footer {
     }
 }
 
-/* =========================================================
-   FINAL MOBILE RESPONSIVE FIX (SAFE UPDATE)
-========================================================= */
+/* FINAL MOBILE RESPONSIVE FIX (SAFE UPDATE)*/
 
 /* GLOBAL MOBILE SPACING */
 @media (max-width: 768px) {
@@ -577,4 +565,47 @@ footer {
         padding: 40px 6%;
         font-size: 0.9rem;
     }
+}
+
+@media (max-width: 768px) {
+
+    /* =========================================================
+   MOBILE NAV – FINAL WORKING FIX
+========================================================= */
+@media (max-width: 768px) {
+
+    /* show hamburger */
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 75px);
+
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(12px);
+
+        display: flex;               /* 🔥 REQUIRED */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+
+        transform: translateY(-120%);
+        transition: transform 0.35s ease;
+        z-index: 999;
+    }
+
+    nav ul.open {
+        transform: translateY(0);
+    }
+
+    nav ul li a {
+        font-size: 1.3rem;
+    }
+}
 }
