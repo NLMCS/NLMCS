@@ -29,11 +29,15 @@
     </ul>
 </nav>
 
-<!-- HERO SECTION -->
 <header id="home">
+    <div class="hero-overlay"></div>
+
     <div class="hero-text">
-        <h1>Grow Your Business<br>With Confidence</h1>
-        <p>Strategic consultancy that turns vision into measurable success.</p>
+        <h1>
+            Grow Your Business<br>
+            <span>With Confidence</span>
+        </h1>
+        <p>Strategic consultancy that transforms vision into measurable results.</p>
         <a href="#contact" class="btn">Work With Us</a>
     </div>
 </header>
@@ -78,9 +82,9 @@
         <div class="card">
             <i class="fas fa-building"></i>
             <h3>Who We Are</h3>
-            <p style="text-align: justify;" >We help organizations expand and succeed in global markets by providing practical, 
-             tailored international business strategies, market entry support, 
-             regulatory guidance, and partnership development—focused on minimizing risk and driving sustainable growth.</p>
+            <p style="text-align: justify;" >NL Business Consultancy supports businesses in achieving sustainable growth both locally and internationally. 
+                                             We provide strategic guidance, market insights,
+                                             and practical solutions to help companies expand into new markets, strengthen operations, and build long-term success</p>
         </div>
         <div class="card">
             <i class="fas fa-lightbulb"></i>
@@ -90,22 +94,38 @@
         <div class="card">
             <i class="fas fa-eye"></i>
             <h3>Our Vision</h3>
-            <p style="text-align: justify;">To shape the future of local and international business through innovation, insight, and integrity.</p>
+            <p style="text-align: justify;">To shape the future of local aend international business through innovation, insight, and integrity.</p>
         </div>
     </div>
 </section>
 
 <!-- PARTNER SECTION -->
 <section id="partner" class="partner-section">
-    <h2>Our Trusted Partner</h2>
-    <p class="partner-subtitle">We collaborate with industry leaders to deliver exceptional value.</p>
+    <h2>Our Trusted Partners</h2>
+    <p class="partner-subtitle">
+        We collaborate with industry leaders to deliver exceptional value.
+    </p>
 
-    <div class="partner-card-single">
-        <img src="2.png" alt="Partner Company Logo">
-        <h3>Tenma-Phil</h3>
-        <p style="text-align: justify;">FREE Japanese Language Classes for N5 and advance learning for N4 to Empower Filipino youth with new skills and opportunities. Join us and take the first step towards a Brighter Future.</p>
-        <a href="#" class="btn-partner" target="_blank">Visit Partner</a>
-    </div>
+    <div class="partner-cards">
+        <div class="partner-card-single">
+            <img src="2.png" alt="Tenma-Phil Logo">
+            <h3>Tenma-Phil</h3>
+            <p>
+                FREE Japanese Language Classes for N5 and advanced learning for N4 to empower Filipino youth 
+                with new skills and opportunities. Join us and take the first step towards a brighter future.
+            </p>
+            <a href="#" class="btn-partner" target="_blank">Visit Partner</a>
+        </div>
+
+        <div class="partner-card-single">
+    <img src="4.jpg" alt="Partner Company Logo">
+    <h3>Tenma Hospital Group</h3>
+    <p>
+        Tenma Hospital Group is a regional healthcare organization based in Japan that operates a network of medical, long‑term care, 
+        and welfare facilities mainly in Tokushima Prefecture, with additional sites in Osaka and Hyogo.
+    </p>
+    <a href="https://tenma-hpg.com/" class="btn-partner" target="_blank">Visit Partner</a>
+</div>
 </section>
 
 
@@ -114,30 +134,37 @@
     <h2>Contact Us</h2>
     <div class="contact-flex">
         <div class="contact-info">
-            <div class="contact-item"><i class="fas fa-phone"></i> 0966224429</div>
-            <div class="contact-item"><i class="fas fa-phone"></i> 0915-012-8758 (Naoyuki yamaguchi International Consultant)</div>
+            <div class="contact-item"><i class="fas fa-phone"></i> 0898-400-5149  (Liza Yamaguchi President)</div>
+            <div class="contact-item"><i class="fas fa-phone"></i> 0915-012-8758 (Naoyuki Yamaguchi International Consultant)</div>
             <div class="contact-item"><i class="fas fa-envelope"></i> nlmcs143@gmail.com</div>
-            <div class="contact-item"><i class="fas fa-envelope"></i> contact@nlmcs.com</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> kyozai8@gmail.com</div>
             <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Blk 1 Lot 38 Villa Palao, Calamba, Laguna</div>
             <div class="contact-item">
                 <i class="fab fa-facebook-f"></i>
-                <a href="https://www.facebook.com/profile.php?id=61588013455324" target="_blank">NL MCS Consultancy</a>
+                <a>NL MCS Consultancy</a>
             </div>
         </div>
 
         <div class="map-glass">
-            <div class="map-header"><i class="fas fa-location-dot"></i> Our Office</div>
-            <iframe src="https://www.google.com/maps?q=Laguna,+Cabuyao+City,+TEMMA+PHIL+Training+Vocational+Institute&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <button class="map-cta" id="directionBtn" onclick="openDirections()">Get Directions</button>
-        </div>
+    <div class="map-header">
+        <i class="fas fa-location-dot"></i> Our Office
     </div>
-</section>
+
+    <!-- ADD THIS WRAPPER -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps?q=Laguna,+Cabuyao+City,+TEMMA+PHIL+Training+Vocational+Institute&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <button class="map-cta" id="directionBtn" onclick="openDirections()">
+        Get Directions
+    </button>
+</div>
 
 
-<!-- FOOTER -->
-<footer>
-    &copy; 2026 NL MCS Consultancy. All Rights Reserved.
-</footer>
 
 <!-- SCRIPT -->
 <script>
@@ -181,17 +208,8 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 }, appearOptions);
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// ===== HERO TYPING EFFECT =====
-const heroText = document.querySelector('.hero-text h1');
-const fullText = heroText.innerText;
-heroText.innerText = '';
-let i = 0;
-(function typeHero() {
-    if (i < fullText.length) {
-        heroText.innerText += fullText[i++];
-        setTimeout(typeHero, 80);
-    }
-})();
+
+
 
 // ===== CARD HOVER =====
 document.querySelectorAll('.card').forEach(card => {
@@ -231,6 +249,8 @@ function resetButton(btn) {
     btn.disabled = false;
 }
 </script>
+
+
 
 </body>
 </html>
